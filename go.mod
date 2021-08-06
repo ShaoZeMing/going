@@ -1,8 +1,5 @@
 module github.com/ShaoZeMing/going
 
-go 1.15
+go 1.16
 
-require (
-	github.com/gin-gonic/gin v1.7.2
-	github.com/json-iterator/go v1.1.11 // indirect
-)
+require github.com/gin-gonic/gin v1.7.3 // indirect
