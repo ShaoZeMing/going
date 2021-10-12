@@ -1,11 +1,4 @@
 # going- golang 学习笔记
 
- 学习笔记
-
-## 第一节：基础语法的使用
-
-
-
-## 第二节：学习使用gin
-
-- [hello-world](https://github.com/ShaoZeMing/going/blob/master/learn-gin/doc/start-hello-world.mdhttps://)
+- 基础框架结构整理
+- 基础函数和接口定义
