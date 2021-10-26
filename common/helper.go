@@ -30,3 +30,13 @@ func JsonFail(c *gin.Context, res *Rep) {
 
 	c.JSON(http.StatusInternalServerError, res)
 }
+
+// Try 异常捕获函数
+func Try(fn func(), catchFn func(err interface{})) {
+	defer func() {
+		if err := recover(); err != nil {
+			catchFn(err)
+		}
+	}()
+	fn()
+}
