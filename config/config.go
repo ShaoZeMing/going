@@ -15,7 +15,7 @@ type app struct {
 	AppName    string `json:"app_name"`    //应用名称
 	AppEnv     string `json:"app_env"`     //应用环境
 	RunMode    string `json:"run_mode"`    //运行模式
-	HTTPListen string `json:"http_listen"` //应用监听HTTP服务=IP:端口
+	HttpListen string `json:"http_listen"` //应用监听HTTP服务=IP:端口
 	GrpcListen string `json:"grpc_listen"` //应用监听grpc= IP:端口
 }
 
@@ -38,19 +38,17 @@ type log struct {
 
 func ConfInit() *Config {
 
-	var conf *Config
+	var conf Config
 	viper.SetConfigName("app")
 	viper.SetConfigType("toml")
-	viper.AddConfigPath(".")
+	viper.AddConfigPath("./config")
 	err := viper.ReadInConfig()
 	if err != nil {
 		panic(err)
-		return nil
 	}
-	err = viper.Unmarshal(conf)
+	err = viper.Unmarshal(&conf)
 	if err != nil {
 		panic(err)
-		return nil
 	}
-	return conf
+	return &conf
 }

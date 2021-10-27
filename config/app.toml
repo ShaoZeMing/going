@@ -2,14 +2,14 @@
 title = "App 配置文件"
 
 [app]
-app_name = "going"
-app_env = "debug"
-run_mode = "debug"
-http_listen = "0.0.0.0:8022"
-grpc_listen = "0.0.0.0:8023"
+AppName = "going"
+AppEnv = "debug"
+RunMode = "debug"
+HttpListen = "0.0.0.0:8022"
+GrpcListen = "0.0.0.0:8023"
 
 [mysql]
-dsn = "root:xthk123456@tcp(192.168.3.100:32106)/xthk_payment?charset=utf8&parseTime=True&loc=Local"
-maxIdleConn = 10
-maxOpenConn = 100
-connMaxLifetime = 2
+Dsn = "root:12315Smm@tcp(127.0.0.1:3306)/xthk_payment?charset=utf8&parseTime=True&loc=Local"
+MaxIdleConn = 10
+MaxOpenConn = 100
+ConnMaxLifetime = 2

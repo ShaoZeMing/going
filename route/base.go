@@ -5,14 +5,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Init() *gin.Engine {
+func Init(r *gin.Engine) {
 
-	router := gin.Default()
-	v1 := router.Group("v1")
+	v1 := r.Group("v1")
 	{
 		v1.GET("/ready", base.Ready)
 
 	}
-
-	return router
 }

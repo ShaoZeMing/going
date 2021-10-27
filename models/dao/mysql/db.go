@@ -1,6 +1,7 @@
 package mysql
 
 import (
+	"github.com/ShaoZeMing/going/core"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"log"
@@ -9,10 +10,10 @@ import (
 
 var DB *gorm.DB
 
-func InitMysql() {
+func InitMysql(app *core.App) {
 	// 参考 https://github.com/go-sql-driver/mysql#dsn-data-source-name 获取详情
 	var err error
-	dsn := "user:pass@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := app.Config.Mysql.Dsn
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Printf("[gstore_db] mysql fail, err=%s", err)
@@ -34,5 +35,4 @@ func InitMysql() {
 		panic(err)
 	}
 	log.Printf("[gstore_db] mysql success")
-
 }
