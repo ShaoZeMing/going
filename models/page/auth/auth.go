@@ -1,4 +1,8 @@
-package auth
+package pageauth
+
+func Register() {
+
+}
 
 func Login() {
 

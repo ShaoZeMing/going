@@ -1,6 +1,7 @@
 package common
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -39,4 +40,12 @@ func Try(fn func(), catchFn func(err interface{})) {
 		}
 	}()
 	fn()
+}
+
+// FenToYuan 分转元格式化为字符串
+func FenToYuan(x int64) string {
+	var rounded float64
+	rounded = float64(x) * 100000 / 100 / 100000
+	formatted := fmt.Sprintf("%.2f", rounded)
+	return formatted
 }
