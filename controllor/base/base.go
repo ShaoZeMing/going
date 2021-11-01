@@ -5,12 +5,35 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+//Ready 就绪
 func Ready(c *gin.Context) {
 
 	r := common.Rep{
-		Code:    401,
+		Code:    200,
 		Message: "成功",
 		Data:    map[string]string{"user": "xiaoming", "moblie": "17778020863", "desc": "你好，你对的"},
+	}
+	common.Success(c, &r)
+}
+
+//Healthy 健康检测
+func Healthy(c *gin.Context) {
+
+	r := common.Rep{
+		Code:    200,
+		Message: "success",
+		Data:    "",
+	}
+	common.Success(c, &r)
+}
+
+//Reload 配置重载接口
+func Reload(c *gin.Context) {
+
+	r := common.Rep{
+		Code:    200,
+		Message: "success",
+		Data:    "",
 	}
 	common.Success(c, &r)
 }
