@@ -14,10 +14,6 @@ type Rep struct {
 
 func Success(c *gin.Context, res *Rep) {
 
-	if res.Code >= 400 {
-	} else {
-
-	}
 	c.JSON(http.StatusOK, res)
 
 }

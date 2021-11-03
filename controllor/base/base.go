@@ -11,7 +11,7 @@ func Ready(c *gin.Context) {
 	r := common.Rep{
 		Code:    200,
 		Message: "成功",
-		Data:    map[string]string{"user": "xiaoming", "moblie": "17778020863", "desc": "你好，你对的"},
+		Data:    map[string]string{"user": "xiaoming", "moblie": "1777***7676", "desc": ""},
 	}
 	common.Success(c, &r)
 }
